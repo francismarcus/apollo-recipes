@@ -2,8 +2,8 @@
 ___
 
 ### Why?
-By popular convention, mutation and query logic is colocated with our components.
-With the increased amount of logic in our components due to more advanced usage of Mutations and Querys, our components quickly become bloated. Colocated logic causes unnecessary cognitive load for readers of the code and is harder to maintain. 
+By popular convention, mutation and query logic is co-located with our components.
+With the increased amount of logic in our components due to more advanced usage of Mutations and Querys, our components quickly become bloated. Co-located logic causes unnecessary cognitive load for readers of the code and is harder to maintain. 
 
 ### How?
 
