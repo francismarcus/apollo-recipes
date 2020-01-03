@@ -1,3 +1,4 @@
+
 # Recipes for @apollo/react-hooks to create scalable & maintainable applications 🚀
 ___
 
@@ -153,6 +154,47 @@ export const getTodosQuery = gql`
 export const useTodosQuery = () => useQuery(getTodosQuery)
 ```
 
+**Same thing goes for local state updates:**
+```jsx
+import React from "react";
+import { useApolloClient } from "@apollo/react-hooks";
+
+const FilterLink = ({ filter, children }) => {
+  const client = useApolloClient();
+  return (
+    <button
+      onClick={() => client.writeData({ data: { myFilter: filter } })}
+    >
+      {children}
+    </button>
+  );
+}
+```
+**We rather:**
+```jsx
+import React from "react";
+import { useMyFilterMutation } from "recipes/filter/client";
+
+const FilterLink = ({ filter, children }) => (
+    <button
+      onClick={() => useMyFilterMutation(filter)}>
+      {children}
+    </button>
+  );
+```
+*And our recipe:*
+```javascript
+import { useApolloClient } from  '@apollo/react-hooks'
+
+const client = useApolloClient()
+export function writeTokenToClient (filter) {
+  return client.writeData({
+	  data: {
+		  myFilter: filter
+	  }
+  })
+}
+```
 
 #### Recommended patterns 
 **Structure**:
