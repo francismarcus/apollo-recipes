@@ -173,11 +173,11 @@ const FilterLink = ({ filter, children }) => {
 **We rather:**
 ```jsx
 import React from "react";
-import { useMyFilterMutation } from "recipes/filter/client";
+import { myFilterAction } from "recipes/filter/client";
 
 const FilterLink = ({ filter, children }) => (
     <button
-      onClick={() => useMyFilterMutation(filter)}>
+      onClick={() => myFilterAction(filter)}>
       {children}
     </button>
   );
@@ -187,7 +187,7 @@ const FilterLink = ({ filter, children }) => (
 import { useApolloClient } from  '@apollo/react-hooks'
 
 const client = useApolloClient()
-export function writeTokenToClient (filter) {
+export function myFilterAction (filter) {
   return client.writeData({
 	  data: {
 		  myFilter: filter
