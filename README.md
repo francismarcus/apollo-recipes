@@ -74,8 +74,8 @@ export default Todos
 **We much rather:**
 ```javascript
 import React from 'react'
-import { useTodosQuery } from 'recipes/todos/queries'
-import { useDeleteTodoMutation } from 'recipes/todos/mutations'
+import { useTodosQuery } from 'graphql/todos/queries'
+import { useDeleteTodoMutation } from 'graphql/todos/mutations'
 
 const Todos = () => {
     const deleteTodo = useDeleteTodoMutation()
@@ -173,7 +173,7 @@ const FilterLink = ({ filter, children }) => {
 **We rather:**
 ```jsx
 import React from "react";
-import { myFilterAction } from "recipes/filter/client";
+import { myFilterAction } from "graphql/client/filter";
 
 const FilterLink = ({ filter, children }) => (
     <button
