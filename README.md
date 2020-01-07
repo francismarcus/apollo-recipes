@@ -206,7 +206,7 @@ An example folder structure might look something like:
       index.tsx
       /components
       ....
-      /recipes
+      /graphql
           /todos
               mutations.ts
               queries.ts
